@@ -51,17 +51,17 @@ function App() {
               <SimpleCard title='Testing Polar Charts' height={400}>
                 <PolarChart 
                   data={[
-                    {'angularCoord': 25, 'radialCoord': 1, 'size': 10, 'name': 'Label 1', 'status': 'On Time'},
-                    {'angularCoord': 105, 'radialCoord': 0.8, 'size': 10, 'name': 'Label 2', 'status': 'On Time'},
-                    {'angularCoord': 266, 'radialCoord': 1, 'size': 10, 'name': 'Label 3', 'status': 'Delayed'},
-                    {'angularCoord': 8, 'radialCoord': 0.2, 'size': 20, 'name': 'Label 4', 'status': 'Delayed'},
-                    {'angularCoord': 189, 'radialCoord': 1, 'size': 25, 'name': 'Label 5', 'status': 'On Time'},
-                    {'angularCoord': 305, 'radialCoord': 0.6, 'size': 15, 'name': 'Label 6', 'status': 'On Time'},
+                    {'angularCoord': -20, 'radialCoord': 0.9, 'size': 12, 'name': 'Label 1', 'status': 'On Time', 'fill': '#F3AE18' , 'stroke': 'none'},
+                    {'angularCoord': 20, 'radialCoord': 0.6, 'size': 7, 'name': 'Label 2', 'status': 'On Time', 'fill': 'none' , 'stroke': '#3FCE9A'},
+                    {'angularCoord': -39, 'radialCoord': 0.5, 'size': 7, 'name': 'Label 3', 'status': 'Delayed', 'fill': '#3FCE9A' , 'stroke': 'none'},
+                    {'angularCoord': -120, 'radialCoord': 0.9, 'size': 7, 'name': 'Label 4', 'status': 'Delayed', 'fill': '#3FCE9A' , 'stroke': 'none'},
+                    {'angularCoord': -160, 'radialCoord': 0.5, 'size': 12, 'name': 'Label 5', 'status': 'On Time', 'fill': '#3FCE9A' , 'stroke': 'none'},
+                    {'angularCoord': -220, 'radialCoord': 0.75, 'size': 7, 'name': 'Label 6', 'status': 'On Time', 'fill': 'none' , 'stroke': '#F3AE18'},
                   ]} 
                   areaLabels={[
-                    {'name': 'Area 1', 'radius': 0.4},
-                    {'name': 'Area 2', 'radius': 0.6},
-                    {'name': 'Area 3', 'radius': 0.8}
+                    {'name': 'Area 1', 'radius': 0.23},
+                    {'name': 'Area 2', 'radius': 0.52},
+                    {'name': 'Area 3', 'radius': 0.78}
                   ]}
                   id={'F'} 
                 />

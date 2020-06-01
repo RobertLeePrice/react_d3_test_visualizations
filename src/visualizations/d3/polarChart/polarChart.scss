@@ -7,18 +7,20 @@ $roboto: 'Roboto', serif;
   stroke: #000;
 }
 
-.axis text {
-  font: 10px sans-serif;
+.area-text {
+  font: 8px sans-serif;
+  fill: #929CA4;
 }
 
 .axis line,
 .axis circle {
   fill: none;
-  stroke: #4D5058;
+  stroke: #283D50;
+  stroke-width: 1.5px;
 }
 
-.axis :last-of-type circle {
-  stroke: #686C77;
+.axis :nth-of-type(2) circle {
+  stroke: none;
 }
 
 .d3-tip {

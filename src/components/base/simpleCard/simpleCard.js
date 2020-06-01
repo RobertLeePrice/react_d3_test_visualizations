@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     root: {
         minWidth: 275,
         margin: 16,
-        backgroundColor: '#223544',
+        backgroundColor: '#223444',
         font: 'Roboto'
     },
     title: {

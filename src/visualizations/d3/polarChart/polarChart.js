@@ -9,6 +9,7 @@ class PolarChart extends Component {
         super(props);
         this.state = {
             data: this.props.data,
+            areaLabels: this.props.areaLabels,
             width: 0,
             height: 0
         }
@@ -29,10 +30,10 @@ class PolarChart extends Component {
         let margin = { top: 5, right: 5, bottom: 5, left: 5 },
             width = this.state.width - margin.left - margin.right,
             height = this.state.height - margin.top - margin.bottom,
-            color = '#D8DDEF',
+            color = '#3FCE9A',
             hoverColor = '#F2AE17',
             axisLineColor = '#4D5058',
-            negativeColor = '#F97068';
+            negativeColor = '#F3AE18';
 
 
         // http://stackoverflow.com/a/929107
@@ -72,7 +73,7 @@ class PolarChart extends Component {
         let gr = svg.append('g')
                 .attr('class', 'r axis')
             .selectAll('g')
-                .data(r.ticks(5))
+                .data([0, 0.185, 0.5, 0.75, 1])
                 .enter()
                 .append('g');
 
@@ -87,14 +88,6 @@ class PolarChart extends Component {
             }
         });
         
-        gr.append("text")
-            .attr("y", function(d) { return -r(d) - 4; })
-            .style("text-anchor", "middle")
-            .text(function(d) { 
-                return d; 
-            })
-            .attr('fill', axisLineColor);
-
         let line = d3.lineRadial()
             .radius(function (d) {
                 return r(d.radialCoord);
@@ -121,7 +114,9 @@ class PolarChart extends Component {
             .attr('r', function (d) {
                 return d.size;
             })
-            .attr('fill', d => (d.status === 'On Time' ? color : negativeColor))
+            .attr('fill', d => d.fill)
+            .attr('stroke', d => d.stroke)
+            .attr('stroke-width', 2)
             .on("mouseover", function(d) {
                 d3.select(this).style("fill", function() {
                     return d3.rgb(d3.select(this).style("fill")).darker(1);
@@ -134,6 +129,24 @@ class PolarChart extends Component {
                 })
                 tip.hide(d, this);
             });
+
+        /**
+         * Render text area
+         */
+        const areaGroup = svg.append("g")
+            .attr("class", "area-group");
+
+        const areas = areaGroup.selectAll("text").data(this.state.areaLabels);
+        const enterAreas = areas.enter().append("text");
+        const mergeAreas = areas.merge(enterAreas);
+
+        mergeAreas
+            .attr("class", "area-text")
+            .attr("x", d => r(d.radius) + 16)
+            .attr("text-anchor", "middle")
+            .text(d => d.name)
+
+        areas.exit().remove();
     }
 
 
