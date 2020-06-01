@@ -49,14 +49,22 @@ function App() {
         <Grid container spacing={0} >
           <Grid item xs={12} sm={12} md={6} lg={4}>
               <SimpleCard title='Testing Polar Charts' height={400}>
-                <PolarChart data={[
-                  {'angularCoord': 25, 'radialCoord': 1, 'size': 10, 'name': 'Label 1', 'status': 'On Time'},
-                  {'angularCoord': 105, 'radialCoord': 0.8, 'size': 10, 'name': 'Label 2', 'status': 'On Time'},
-                  {'angularCoord': 266, 'radialCoord': 1, 'size': 10, 'name': 'Label 3', 'status': 'Delayed'},
-                  {'angularCoord': 8, 'radialCoord': 0.2, 'size': 20, 'name': 'Label 4', 'status': 'Delayed'},
-                  {'angularCoord': 189, 'radialCoord': 1, 'size': 25, 'name': 'Label 5', 'status': 'On Time'},
-                  {'angularCoord': 305, 'radialCoord': 0.6, 'size': 15, 'name': 'Label 6', 'status': 'On Time'},
-                ]} id={'F'} />
+                <PolarChart 
+                  data={[
+                    {'angularCoord': 25, 'radialCoord': 1, 'size': 10, 'name': 'Label 1', 'status': 'On Time'},
+                    {'angularCoord': 105, 'radialCoord': 0.8, 'size': 10, 'name': 'Label 2', 'status': 'On Time'},
+                    {'angularCoord': 266, 'radialCoord': 1, 'size': 10, 'name': 'Label 3', 'status': 'Delayed'},
+                    {'angularCoord': 8, 'radialCoord': 0.2, 'size': 20, 'name': 'Label 4', 'status': 'Delayed'},
+                    {'angularCoord': 189, 'radialCoord': 1, 'size': 25, 'name': 'Label 5', 'status': 'On Time'},
+                    {'angularCoord': 305, 'radialCoord': 0.6, 'size': 15, 'name': 'Label 6', 'status': 'On Time'},
+                  ]} 
+                  areaLabels={[
+                    "Area 1",
+                    "Area 2", 
+                    "Area 3"
+                  ]}
+                  id={'F'} 
+                />
               </SimpleCard>
           </Grid>
         </Grid>
