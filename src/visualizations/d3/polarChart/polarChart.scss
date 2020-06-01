@@ -1,0 +1,36 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto|Open+Sans:400italic,700italic,400,700);
+
+$roboto: 'Roboto', serif;   
+
+.frame {
+  fill: none;
+  stroke: #000;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis circle {
+  fill: none;
+  stroke: #4D5058;
+}
+
+.axis :last-of-type circle {
+  stroke: #686C77;
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 16px;
+  background: rgba(39, 39, 39, 0.9);
+  color: #fff;
+  border-radius: 2px;
+}
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
