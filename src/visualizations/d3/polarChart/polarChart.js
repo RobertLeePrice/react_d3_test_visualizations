@@ -73,10 +73,19 @@ class PolarChart extends Component {
                 .attr('class', 'r axis')
             .selectAll('g')
                 .data(r.ticks(5))
-                .enter().append('g');
+                .enter()
+                .append('g');
 
         gr.append('circle')
             .attr('r', r);
+
+        gr.each(function(p, j) {
+            if (j === 1) {
+                d3.select(this)
+                    .select("circle")
+                    .style('fill', '#1c2c39')
+            }
+        });
         
         gr.append("text")
             .attr("y", function(d) { return -r(d) - 4; })
@@ -94,6 +103,11 @@ class PolarChart extends Component {
                 return -reMap(d.angularCoord) + Math.PI / 2;
             });
 
+        svg.append("rect")
+            .attr('width', 15)
+            .attr('height', 15)
+            .attr('fill', 'white')
+            .style('transform', 'translate(1px, -10px) rotate(45deg)')
 
         svg.selectAll('point')
             .data(this.state.data)

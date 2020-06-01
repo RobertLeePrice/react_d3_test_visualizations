@@ -59,9 +59,9 @@ function App() {
                     {'angularCoord': 305, 'radialCoord': 0.6, 'size': 15, 'name': 'Label 6', 'status': 'On Time'},
                   ]} 
                   areaLabels={[
-                    "Area 1",
-                    "Area 2", 
-                    "Area 3"
+                    {'name': 'Area 1', 'radius': 0.4},
+                    {'name': 'Area 2', 'radius': 0.6},
+                    {'name': 'Area 3', 'radius': 0.8}
                   ]}
                   id={'F'} 
                 />
